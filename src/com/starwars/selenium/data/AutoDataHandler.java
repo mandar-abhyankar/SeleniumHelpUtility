@@ -10,6 +10,8 @@ import java.util.HashMap;
 /**
  * Created by Mandar Abhyankar on 4/14/2017.
  * Updated by Mandar Abhyankar on 4/14/2017.
+ * <p>
+ * This class contains methods to retrieve data from a CSV file.
  */
 
 public class AutoDataHandler {
@@ -23,6 +25,14 @@ public class AutoDataHandler {
 
     private static final String DEFAULT_SCENARIO_HEADER_NAME = "ScenarioName";
 
+    /**
+     * This method parses the data file and stores data in a HashMap for retrieval.
+     *
+     * @param CSVFile
+     * @param ScenarioName
+     * @throws IOException
+     * @throws IndexOutOfBoundsException
+     */
     public void parseDataFile(File CSVFile, String ScenarioName) throws IOException, IndexOutOfBoundsException {
         FileReader fileReader = new FileReader(CSVFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -40,10 +50,21 @@ public class AutoDataHandler {
         bufferedReader.close();
     }
 
+    /**
+     * This method returns the data corresponding to the column name.
+     *
+     * @param columnName
+     * @return
+     */
     public String getData(String columnName) {
         return splitData[setHeader.get(columnName)];
     }
 
+    /**
+     * This method calls the parser method passes the required parameters
+     * @param filePath
+     * @param colIdentifier
+     */
     public void DataHandler(String filePath, String colIdentifier) {
         dataFile = new File(filePath);
         columnIdentifier = colIdentifier;

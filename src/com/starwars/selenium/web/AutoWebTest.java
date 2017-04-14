@@ -17,6 +17,12 @@ import java.util.Calendar;
 /**
  * Created by Mandar Abhyankar on 4/14/2017.
  * Updated by Mandar Abhyankar on 4/14/2017
+ * <p>
+ * This class contains the methods for...
+ * 1)Retrieving WebDriver instances of Chrome, IE and Firefox
+ * 2)Maximizing Browser window
+ * 3)Capturing ScreenShot
+ * 4)Shutting down the WebDriver instance
  */
 
 public abstract class AutoWebTest {

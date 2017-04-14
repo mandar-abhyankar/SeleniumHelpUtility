@@ -12,11 +12,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by Mandar Abhyankar on 4/14/2017.
  * Last updated by Mandar Abhyankar on 4/14/2017.
+ * <p>
+ * This class contains methods for...
+ * 1)waitForPageElement - Waits for given WebElement to load.
+ * 2)doesElementExist - Checks if a WebElement exists on a page.
+ * 3)getElementText - Retrieves the text attached to a given WebElement.
+ * 4)selectFromDropDown - Selects a element from dropdown menu using either visible text or index.
+ * 5)scrollToElement - Brings a given WebElement present on a page in view.
  */
 public abstract class AutoWebPage {
 
     protected WebDriver webDriver;
 
+    /**
+     * Constructor calls the waitForPageLoad method implemented by the user.
+     *
+     * @param tempDriver
+     * @throws Exception
+     */
     public AutoWebPage(WebDriver tempDriver) throws Exception {
 
         webDriver = tempDriver;
@@ -31,7 +44,7 @@ public abstract class AutoWebPage {
     }
 
     /**
-     * This method waits for an WebElement on a page to load.
+     * This method waits for a WebElement on a page to load.
      *
      * @param byLocator
      * @param driver
@@ -57,7 +70,7 @@ public abstract class AutoWebPage {
     }
 
     /**
-     * This method is used to retrieve Element text
+     * This method is used to retrieve text attached to a WebElement.
      *
      * @param byLocator
      * @param driver
@@ -101,7 +114,7 @@ public abstract class AutoWebPage {
     }
 
     /**
-     * This method is used to bring a WebElement on Web page in view
+     * This method is used to bring a given WebElement on Web page in view.
      *
      * @param byLocator
      * @param driver
@@ -115,7 +128,7 @@ public abstract class AutoWebPage {
     }
 
     /**
-     * This method has be to be implemented so script can wait until the page is completely loaded.
+     * This method waits for the page to load. Has to be implemented by the user.
      *
      * @return
      */
